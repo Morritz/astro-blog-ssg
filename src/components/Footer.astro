@@ -5,8 +5,10 @@ function getClassForURL(url) {
     return 'line-through';
 }
 ---
-<div class="flex basis-full justify-between max-w-6xl py-4">
-    <a class={`mx-4 w-32 ${getClassForURL(url.prev)} text-left`} href={url.prev}>≪ Previous Page</a>
-    <span class="font-semibold text-center">by Morritz</span>
-    <a class={`mx-4 w-32 ${getClassForURL(url.next)} text-right`} href={url.next}>Next Page ≫</a>
+<div class="grow max-w-6xl py-4">
+    <div class="flex max-w-6xl justify-evenly items-center">
+        <a class={`px-4 ${getClassForURL(url.prev)} text-center basis-1/6`} href={url.prev}>≪ Previous Page</a>
+        <span class="font-semibold text-center basis-4/6">by Morritz</span>
+        <a class={`px-4 ${getClassForURL(url.next)} text-center basis-1/6`} href={url.next}>Next Page ≫</a>
+    </div>
 </div>

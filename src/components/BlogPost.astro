@@ -1,5 +1,6 @@
 ---
 import XElement from 'astro-xelement'
+
 export interface Props {
   createdAt: string;
   title: string;
@@ -7,57 +8,28 @@ export interface Props {
   author: string;
 }
 
-const timeSince = (date: string) => {
-
-  var seconds = Math.floor((new Date().getTime() - new Date(date).getTime()) / 1000);
-
-  var interval = seconds / 31536000;
-
-  if (interval > 1) {
-    return Math.floor(interval) + " years";
-  }
-  interval = seconds / 2592000;
-  if (interval > 1) {
-    return Math.floor(interval) + " months";
-  }
-  interval = seconds / 86400;
-  if (interval > 1) {
-    return Math.floor(interval) + " days";
-  }
-  interval = seconds / 3600;
-  if (interval > 1) {
-    return Math.floor(interval) + " hours";
-  }
-  interval = seconds / 60;
-  if (interval > 1) {
-    return Math.floor(interval) + " minutes";
-  }
-  return Math.floor(seconds) + " seconds";
-}
-
 const { createdAt, title, body, author } = Astro.props;
 ---
-<div class="basis-full max-w-6xl my-4 rounded overflow-hidden shadow-lg px-4 py-4 bg-white">
+<div class="grow my-4 max-w-6xl rounded shadow-lg px-4 py-4 bg-white">
     <div class="divide-y-2">
-    <div class="py-2">
-        <p class="text-3xl text-black font-semibold">{title}</p>
-        <p class="text-1xl text-black italic">by {author} - 
-        <XElement        
-        define:vars={
-        {
-            createdAt,
-            timeSince
-        }}
-        @is="span"
-        @do={element => {
-            element.textContent = timeSince(createdAt) + " ago";
-        }}>
-        {new Date(createdAt).toLocaleDateString()}
-        </XElement>
-        </p>
-    </div>
-    <div class="py-2">
-        <p class="text-sm text-black">{body}</p>
-    </div>
+      <div class="py-2">
+          <p class="text-3xl text-black font-semibold">{title}</p>
+          <p class="text-1xl text-black italic">by {author} - 
+          <XElement        
+          define:vars={{
+            createdAt
+          }}
+          @is="span"
+          @do={async (element) => {
+              const timeSince = (await import('../utils/timeSince')).default;
+              element.textContent = timeSince(createdAt) + " ago";
+          }}>
+          {new Date(createdAt).toLocaleDateString()}
+          </XElement>
+          </p>
+      </div>
+      <div class="py-2">
+          <p class="text-sm text-black">{body}</p>
+      </div>
     </div>
 </div>

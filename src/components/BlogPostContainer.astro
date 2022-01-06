@@ -16,8 +16,10 @@ export async function getStaticPaths({ paginate }) {
 
 const { page } = Astro.props;
 ---
-
-<div class="flex flex-row flex-wrap justify-center">
-    {page.data.map(post => <BlogPost {...post}/> )}
-    <Footer url={page.url} />
+<div class="flex justify-center">
+  <div class="flex flex-row flex-wrap justify-center">
+      {page.data.map(post => <BlogPost {...post}/> )}
+      <Footer url={page.url} />
+  </div>
 </div>
+
