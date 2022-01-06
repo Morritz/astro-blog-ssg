@@ -9,7 +9,7 @@
 > Simple statically generated blog website example utilizing core features of Astro.
 ![image](https://user-images.githubusercontent.com/12800230/148419703-7bea378f-f7a8-4af9-a331-80f68d2bfc64.png)
 
-
+▶️ Demo URL: https://astro-blog-ssg.vercel.app/
 ## Install
 
 ```sh
