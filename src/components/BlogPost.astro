@@ -50,7 +50,7 @@ const { createdAt, title, body, author } = Astro.props;
         }}
         @is="span"
         @do={element => {
-            element.textContent = timeSince(createdAt);
+            element.textContent = timeSince(createdAt) + " ago";
         }}>
         {new Date(createdAt).toLocaleDateString()}
         </XElement>

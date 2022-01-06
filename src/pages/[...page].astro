@@ -1,0 +1,14 @@
+---
+// Component imports and setup JavaScript go here!
+import BaseLayout from '../layouts/BaseLayout.astro'
+import BlogHead from '../components/BlogHead.astro'
+import BlogPostContainer, {getStaticPaths} from '../components/BlogPostContainer.astro'
+
+export { getStaticPaths }
+
+const { page } = Astro.props;
+---
+<BaseLayout>
+	<BlogHead/>
+	<BlogPostContainer page={page} />
+</BaseLayout>

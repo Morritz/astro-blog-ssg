@@ -1,10 +1,23 @@
 ---
 import BlogPost from '../components/BlogPost.astro'
+import Footer from '../components/Footer.astro'
 
-const response = await fetch(import.meta.env.PUBLIC_POSTS_API);
-const data = await response.json();
+export async function getStaticPaths({ paginate }) {
+  const response = await fetch(import.meta.env.PUBLIC_POSTS_API);
+  const result = await response.json();
+
+  // Return a paginated collection of paths for all posts
+  var pages = paginate(result, { pageSize: 10 });
+
+  // Make duplicate of / for /1 for consistency
+  pages.push({params: { page: "1" }, props: {page: pages[0].props.page}});
+  return pages;
+}
+
+const { page } = Astro.props;
 ---
 
 <div class="flex flex-row flex-wrap justify-center">
-    {data.map(post => <BlogPost {...post}/> )}
+    {page.data.map(post => <BlogPost {...post}/> )}
+    <Footer url={page.url} />
 </div>

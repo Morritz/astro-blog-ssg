@@ -1,0 +1,12 @@
+---
+const { url } = Astro.props;
+function getClassForURL(url) {
+    if (url) return 'hover:underline';
+    return 'line-through';
+}
+---
+<div class="flex basis-full justify-between max-w-6xl py-4">
+    <a class={`mx-4 w-32 ${getClassForURL(url.prev)} text-left`} href={url.prev}>≪ Previous Page</a>
+    <span class="font-semibold text-center">by Morritz</span>
+    <a class={`mx-4 w-32 ${getClassForURL(url.next)} text-right`} href={url.next}>Next Page ≫</a>
+</div>

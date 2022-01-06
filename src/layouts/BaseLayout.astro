@@ -1,9 +1,3 @@
----
-// Component imports and setup JavaScript go here!
-import BlogHead from '../components/BlogHead.astro'
-import BlogPostContainer from '../components/BlogPostContainer.astro'
----
-
 <html lang="en">
 	<head>
 		<meta charset="utf-8" />
@@ -14,7 +8,6 @@ import BlogPostContainer from '../components/BlogPostContainer.astro'
 	</head>
 
 	<body class="bg-gradient-to-r from-cyan-500 to-blue-500">
-		<BlogHead/>
-		<BlogPostContainer />
+        <slot/>
 	</body>
 </html>
