@@ -1,43 +1,39 @@
-# Astro Starter Kit: Minimal
+<h1 align="center">Astro Blog SSG</h1>
+<p>
+  <img alt="Version" src="https://img.shields.io/badge/version-1.0.0-blue.svg?cacheSeconds=2592000" />
+  <a href="#" target="_blank">
+    <img alt="License: All Rights Reserved" src="https://img.shields.io/badge/License-All Rights Reserved-yellow.svg" />
+  </a>
+</p>
 
-```
-npm init astro -- --template minimal
-```
+> Simple statically generated blog website example utilizing core features of Astro.
+![image](https://user-images.githubusercontent.com/12800230/148419703-7bea378f-f7a8-4af9-a331-80f68d2bfc64.png)
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/minimal)
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+## Install
 
-## 🚀 Project Structure
-
-Inside of your Astro project, you'll see the following folders and files:
-
-```
-/
-├── public/
-├── src/
-│   └── pages/
-│       └── index.astro
-└── package.json
+```sh
+npm install
 ```
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+## How to run
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+```sh
+npm run dev
+```
 
-Any static assets, like images, can be placed in the `public/` directory.
+or
+```sh
+npm run build && npm run preview
+```
 
-## 🧞 Commands
+## Author
 
-All commands are run from the root of the project, from a terminal:
+👤 **Morritz**
 
-| Command           | Action                                       |
-|:----------------  |:-------------------------------------------- |
-| `npm install`     | Installs dependencies                        |
-| `npm run dev`     | Starts local dev server at `localhost:3000`  |
-| `npm run build`   | Build your production site to `./dist/`      |
-| `npm run preview` | Preview your build locally, before deploying |
 
-## 👀 Want to learn more?
+## Show your support
 
-Feel free to check [our documentation](https://github.com/withastro/astro) or jump into our [Discord server](https://astro.build/chat).
+Give a ⭐️ if this project helped you!
+
+***
