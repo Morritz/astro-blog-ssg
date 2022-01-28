@@ -1,6 +1,4 @@
 ---
-import XElement from 'astro-xelement'
-
 export interface Props {
   createdAt: string;
   title: string;
@@ -10,22 +8,13 @@ export interface Props {
 
 const { createdAt, title, body, author } = Astro.props;
 ---
+<script type="module" src={Astro.resolve('./RelativeDate.ts')}></script>
 <div class="basis-full my-4 rounded shadow-lg px-4 py-4 bg-white">
     <div class="divide-y-2">
       <div class="py-2">
           <p class="text-3xl text-black font-semibold">{title}</p>
           <p class="text-1xl text-black italic">by {author} - 
-          <XElement        
-          define:vars={{
-            createdAt
-          }}
-          @is="span"
-          @do={async (element) => {
-              const timeSince = (await import('../utils/timeSince')).default;
-              element.textContent = timeSince(createdAt) + " ago";
-          }}>
-          {new Date(createdAt).toLocaleDateString()}
-          </XElement>
+          <relative-date {createdAt}>{new Date(createdAt).toLocaleDateString()}</relative-date>
           </p>
       </div>
       <div class="py-2">
