@@ -5,8 +5,8 @@ function getClassForURL(url) {
     return 'line-through';
 }
 ---
-<div class="grow max-w-6xl py-4">
-    <div class="flex max-w-6xl justify-evenly items-center">
+<div class="basis-full py-4">
+    <div class="flex justify-evenly items-center">
         <a class={`px-1 ${getClassForURL(url.prev)} text-center basis-1/6`} href={url.prev}>≪ Previous Page</a>
         <span class="font-semibold text-center">by Morritz</span>
         <a class={`px-1 ${getClassForURL(url.next)} text-center basis-1/6`} href={url.next}>Next Page ≫</a>
