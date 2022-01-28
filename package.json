@@ -13,5 +13,8 @@
     "astro-xelement": "^3.1.0",
     "autoprefixer": "^10.4.1",
     "tailwindcss": "^3.0.11"
+  },
+  "dependencies": {
+    "@astropub/assert": "^0.1.2"
   }
 }

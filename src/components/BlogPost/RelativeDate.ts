@@ -1,14 +1,12 @@
 import timeSince from "../../utils/timeSince";
-class RelativeDate extends HTMLElement {
-  constructor() {
-    super();
-  }
+export default class RelativeDate extends HTMLElement {
   connectedCallback() {
     const createdAt = this.getAttribute("createdAt");
     if (createdAt) {
       this.textContent = timeSince(createdAt) + " ago";
     }
   }
+  static observedAttributes = ["createdAt"];
 }
 
 customElements.define("relative-date", RelativeDate);
