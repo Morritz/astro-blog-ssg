@@ -3,7 +3,7 @@
 import BaseLayout from '../layouts/BaseLayout.astro'
 import BlogHead from '../components/BlogHead.astro'
 import BlogPostContainer, {getStaticPaths} from '../components/BlogPostContainer.astro'
-
+import { Spa } from "astro-spa";
 export { getStaticPaths }
 
 const { page } = Astro.props;
@@ -11,4 +11,5 @@ const { page } = Astro.props;
 <BaseLayout>
 	<BlogHead/>
 	<BlogPostContainer page={page} />
+	<Spa/>
 </BaseLayout>
