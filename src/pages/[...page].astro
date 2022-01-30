@@ -10,6 +10,8 @@ const { page } = Astro.props;
 ---
 <BaseLayout>
 	<BlogHead/>
+	<div id="container">
 	<BlogPostContainer page={page} />
-	<Spa/>
+	</div>
+	<Spa containerSelector="#container" />
 </BaseLayout>
